@@ -3,6 +3,7 @@ import { ShopContext } from "../context/ShopContext";
 import axios from "axios";
 import { toast } from "react-toastify";
 
+const url = "https://ecommerce-sarahcolllections-backend.onrender.com"
 const Login = () => {
   const [currentState, setCurrentState] = useState("Login");
   const { token, setToken, navigate } = useContext(ShopContext);
@@ -16,7 +17,7 @@ const Login = () => {
     try {
       if (currentState === "Sign Up") {
         const response = await axios.post(
-          "http://localhost:4000/api/user/register",
+          `${url}/api/user/register`,
           {
             name,
             email,
@@ -31,7 +32,7 @@ const Login = () => {
         }
       } else {
         const response = await axios.post(
-          "http://localhost:4000/api/user/login",
+          `${url}/api/user/login`,
           { email, password }
         );
         if (response.data.success) {
