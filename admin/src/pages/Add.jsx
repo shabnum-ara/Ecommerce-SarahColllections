@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import assets from "../assets/assets";
 import axios from "axios";
 
-const backendurl = import.meta.env.VITE_BACKEND_URL;
+const backendurl = "https://ecommerce-sarahcolllections-backend.onrender.com";
 
 const Add = ({ token }) => {
   const [image1, setImage1] = useState(false);
