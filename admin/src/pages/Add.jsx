@@ -44,17 +44,31 @@ const Add = ({ token }) => {
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
-       if (response.data.success) {
-        toast.success(response.data.message);
-      } else {
-        toast.error(response.data.message);
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error(error.message);
+        // ✅ Update the loading toast to success
+    if (response.data.success) {
+      toast.update(toastId, {
+        render: response.data.message,
+        type: "success",
+        isLoading: false,
+        autoClose: 3000,
+      });
+    } else {
+      toast.update(toastId, {
+        render: response.data.message,
+        type: "error",
+        isLoading: false,
+        autoClose: 3000,
+      });
     }
-  };
-
+  } catch (error) {
+    toast.update(toastId, {
+      render: error.message || "Upload failed",
+      type: "error",
+      isLoading: false,
+      autoClose: 3000,
+    });
+  }
+};
   return (
     <form
       onSubmit={onSubmitHandler}
