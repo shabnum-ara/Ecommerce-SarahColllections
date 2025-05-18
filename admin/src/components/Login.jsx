@@ -8,7 +8,7 @@ const Login = ({ setToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const backendurl = import.meta.env.VITE_BACKEND_URL;
+  export const backendurl = "https://ecommerce-sarahcolllections-backend.onrender.com";
 
   const navigate = useNavigate();
 
