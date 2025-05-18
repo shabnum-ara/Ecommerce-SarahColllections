@@ -46,7 +46,6 @@ const Add = ({ token }) => {
       );
        if (response.data.success) {
         toast.success(response.data.message);
-        await fetchList();
       } else {
         toast.error(response.data.message);
       }
