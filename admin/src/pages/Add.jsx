@@ -44,13 +44,15 @@ const Add = ({ token }) => {
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
-
-     toast.success("🎉 Product added successfully!");
-      
-    } catch (error) 
-    {
-       console.error(error);
-    toast.error("Failed to add product. Please try again.");
+       if (response.data.success) {
+        toast.success(response.data.message);
+        await fetchList();
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message);
     }
   };
 
