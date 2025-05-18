@@ -45,12 +45,13 @@ const Add = ({ token }) => {
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
-     toast.success("🎉 Product added successfully!", {
-        position: "top-right",
-        autoClose: 3000,
-      });
+     toast.success("🎉 Product added successfully!");
       
-    } catch (error) {}
+    } catch (error) 
+    {
+       console.error(error);
+    toast.error("Failed to add product. Please try again.");
+    }
   };
 
   return (
