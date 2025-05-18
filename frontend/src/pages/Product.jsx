@@ -90,14 +90,22 @@ useEffect(() => {
             </div>
           </div>
          <button
-  onClick={() => {
-    if (!size) {
-      toast.error("Please select a size before adding to cart");
-      return;
-    }
-    addToCart(productData._id, size);
-    toast.success("Added to cart!");
-  }}
+ onClick={() => {
+  const token = localStorage.getItem("token"); // check login state
+
+  if (!token) {
+    toast.error("Please login before adding to cart.");
+    return;
+  }
+
+  if (!size) {
+    toast.error("Please select a size before adding to cart");
+    return;
+  }
+
+  addToCart(productData._id, size);
+  toast.success("Added to cart!");
+}}
   className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700"
 >
   ADD TO CART
