@@ -21,7 +21,7 @@ function App() {
       <ToastContainer />
       <Navbar />
       <SearchBar />
-       <ScrollToTop />
+       <ScrollTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/collections" element={<Collections />} />
