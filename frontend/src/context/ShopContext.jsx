@@ -5,6 +5,8 @@ import axios from "axios";
 export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
+
+  const url = "https://ecommerce-sarahcolllections-backend.onrender.com"
   const currency = "$ ";
   const delivery_fee = 10;
   // for searching state
