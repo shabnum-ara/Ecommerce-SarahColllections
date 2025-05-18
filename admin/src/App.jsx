@@ -9,8 +9,8 @@ import Login from "./components/Login";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export const backendurl = import.meta.env.VITE_BACKEND_URL;
-
+export const backendurl = "https://ecommerce-sarahcolllections-backend.onrender.com";
+  
 export const currency = "$";
 const App = () => {
   const [token, setToken] = useState(
