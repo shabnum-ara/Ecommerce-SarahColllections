@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { backendurl, currency } from "../App";
+import { currency } from "../App";
 import assets from "../assets/assets";
 import { toast } from "react-toastify";
 
+
+export const backendurl = "https://ecommerce-sarahcolllections-backend.onrender.com"
 const Orders = ({ token }) => {
   const [orders, setOrders] = useState([]);
 
