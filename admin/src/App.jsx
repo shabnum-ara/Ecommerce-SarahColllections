@@ -8,7 +8,6 @@ import List from "./pages/List";
 import Login from "./components/Login";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Login from "./admin/pages/Login"; // adjust the path if needed
 
 export const backendurl = import.meta.env.VITE_BACKEND_URL;
 
