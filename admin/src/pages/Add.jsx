@@ -22,6 +22,8 @@ const Add = ({ token }) => {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
+    const toastId = toast.loading("Adding product...");
+
     try {
       const formData = new FormData();
 
@@ -59,7 +61,7 @@ const Add = ({ token }) => {
         type: "error",
         isLoading: false,
         autoClose: 3000,
-      });
+      });s
     }
   } catch (error) {
     toast.update(toastId, {
