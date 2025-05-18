@@ -22,7 +22,6 @@ const Add = ({ token }) => {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-toast.info("Adding product...");
     try {
       const formData = new FormData();
 
@@ -38,6 +37,8 @@ toast.info("Adding product...");
       image2 && formData.append("image2", image2);
       image3 && formData.append("image3", image3);
       image4 && formData.append("image4", image4);
+
+      toast.info("Adding product...");
 
       const response = await axios.post(
         `${backendurl}/api/product/add`,
