@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import assets from "../assets/assets";
 import axios from "axios";
+import { toast } from "react-toastify"; 
+import "react-toastify/dist/ReactToastify.css";
 
 const backendurl = "https://ecommerce-sarahcolllections-backend.onrender.com";
 
@@ -44,7 +46,11 @@ const Add = ({ token }) => {
       );
 
       console.log(response.data);
-      console.log(token);
+     toast.success("🎉 Product added successfully!", {
+        position: "top-right",
+        autoClose: 3000,
+      });
+      
     } catch (error) {}
   };
 
