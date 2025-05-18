@@ -12,7 +12,7 @@ const LatestCollection = () => {
 
   useEffect(() => {
     if (products && Array.isArray(products)) {
-      const latest = products.slice(0, 6);
+      const latest = products.slice(0, 5);
       setLatestProducts(latest);
     }
   }, [products]);
