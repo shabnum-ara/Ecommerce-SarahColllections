@@ -22,7 +22,7 @@ const Add = ({ token }) => {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-
+toast.info("Adding product...");
     try {
       const formData = new FormData();
 
