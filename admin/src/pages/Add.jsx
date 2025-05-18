@@ -45,7 +45,6 @@ const Add = ({ token }) => {
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
-      console.log(response.data);
      toast.success("🎉 Product added successfully!", {
         position: "top-right",
         autoClose: 3000,
